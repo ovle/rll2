@@ -1,0 +1,52 @@
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'application'
+
+buildscript {
+    ext.kotlinVersion = '1.3.0'
+    ext.junitVersion = '4.12'
+    ext.gdxVersion = '1.9.9'
+    ext.jacksonVersion = '2.9.0'
+    ext.kodeinVersion = '4.1.0'
+    ext.rxKotlinVersion = '1.0.0'
+    ext.artemisOdbVersion = '2.2.0'
+    ext.noise4jVersion = '0.1.0'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+
+    compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+
+    compile "net.onedaybeard.artemis:artemis-odb:$artemisOdbVersion"
+    compile "com.github.czyzby:noise4j:$noise4jVersion"
+
+    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    compile "com.github.salomonbrys.kodein:kodein:$kodeinVersion"
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.11.2'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.11.2'
+
+    compile "io.reactivex:rxkotlin:$rxKotlinVersion"
+
+    testCompile "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
+    testCompile "junit:junit:$junitVersion"
+}
+
+mainClassName = "launcher.LauncherKt"

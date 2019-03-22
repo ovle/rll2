@@ -1,0 +1,86 @@
+[
+  {
+    "id": "human",
+    "type": "Creature",
+    "name": "human",
+    "passable": true,
+    "box": {"width": 0.6, "height": 0.6},
+    "moving": {
+      "type": "Ground",
+      "speed": 2.0
+    },
+
+    "spawnCondition": {
+      "chance": 0.10
+    }
+  },
+  {
+    "id": "troll",
+    "type": "Creature",
+    "name": "troll",
+    "passable": true,
+    "box": {"width": 1.0, "height": 1.2},
+    "moving": {
+      "type": "Ground",
+      "speed": 1.0
+    },
+
+    "spawnCondition": {
+      "chance": 0.10
+    }
+  },
+  {
+    "id": "bush",
+    "type": "Environment",
+    "name": "bush",
+    "passable": true,
+    "box": {"width": 1.0, "height": 1.0},
+    "spawnCondition": {
+      "biome": "Temperate",
+      "time": "Day",
+      "chance": 0.4
+    }
+  },
+  {
+    "id": "tree",
+    "type": "Environment",
+    "name": "tree",
+    "passable": true,
+    "box": {"width": 1.0, "height": 2.0},
+    "spawnCondition": {
+      "biome": "Temperate",
+      "time": "Day",
+      "chance": 0.2
+    }
+  },
+  {
+    "id": "house1",
+    "type": "Environment",
+    "name": "house",
+    "passable": true,
+    "box": {"width": 3.5, "height": 2.0},
+    "spawnCondition": {
+      "biome": "Temperate",
+      "time": "Day",
+      "chance": 0.0,
+      "spawnWith":[
+        {
+          "id": "door1",
+          "offset": {"x": 1, "y": 2}
+        }
+      ]
+    }
+  },
+  {
+    "id": "door1",
+    "type": "Environment",
+    "name": "door",
+    "passable": true,
+    "box": {"width": 1.0, "height": 2.0},
+    "spawnCondition": {
+      "biome": "Temperate",
+      "time": "Day",
+      "chance": 0.0
+    }
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "shortSword",
+    "type": "Weapon",
+    "subtype": "Sword",
+    "name": "short sword",
+    "actions": [
+      {
+        "type": "StabHit"
+      },
+      {
+        "type": "SlashHit"
+      },
+      {
+        "type": "Block"
+      }
+    ]
+  },
+  {
+    "id": "basicClothes",
+    "type": "Clothes",
+    "subtype": "LightClothes",
+    "name": "clothes",
+    "actions": []
+  },
+  {
+    "id": "cloak",
+    "type": "Clothes",
+    "subtype": "LightClothes",
+    "name": "cloak",
+    "actions": [
+      {
+        "type": "Hide"
+      }
+    ]
+  },
+  {
+    "id": "plate",
+    "type": "Clothes",
+    "subtype": "LightClothes",
+    "name": "plate",
+    "actions": []
+  },
+  {
+    "id": "robe",
+    "type": "Clothes",
+    "subtype": "LightClothes",
+    "name": "robe",
+    "actions": []
+  }
+]

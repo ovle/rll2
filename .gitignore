@@ -1,0 +1,7 @@
+lib/
+bin/
+out/
+.idea
+.gradle
+#ignore thumbnails created by windows
+Thumbs.db

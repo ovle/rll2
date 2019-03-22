@@ -1,0 +1,239 @@
+[
+   {
+    "id": "humanoid",
+
+    "sprites": [
+      {"id": "human", "index": 0},
+      {"id": "troll", "index": 3}
+    ],
+
+    "regionSize": {
+      "width": 12,
+      "height": 12
+    },
+    "parts": [
+      {
+        "id": "main",
+        "indexX": 0,
+        "Y": 0,
+        "height": 12,
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "animations": [
+          {
+            "id": "stab",
+            "startIndexX": 7,
+            "steps": 3,
+            "frameDuration": 0.2
+          },
+          {
+            "id": "slash",
+            "startIndexX": 0,
+            "startIndexY": 1,
+            "steps": 5,
+            "frameDuration": 0.2
+          },
+          {
+            "id": "invoke",
+            "startIndexX": 6,
+            "startIndexY": 1,
+            "steps": 4,
+            "frameDuration": 0.3
+          },
+          {
+            "id": "block",
+            "startIndexX": 0,
+            "startIndexY": 2,
+            "steps": 4,
+            "frameDuration": 0.2
+          },
+          {
+            "id": "die",
+            "startIndexX": 5,
+            "startIndexY": 2,
+            "steps": 5,
+            "frameDuration": 0.2,
+            "terminal": true
+          },
+          {
+            "id": "walk",
+            "startIndexX": 1,
+            "steps": 5,
+            "frameDuration": 0.125,
+            "repeat": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "environment",
+    "sprites": [
+      {
+        "id": "bush",
+        "origin": {
+          "x": 1,
+          "y": 38
+        },
+        "size": {
+          "width": 13,
+          "height": 9
+        }
+      },
+      {
+        "id": "bush",
+        "origin": {
+          "x": 1,
+          "y": 49
+        },
+        "size": {
+          "width": 13,
+          "height": 8
+        }
+      },
+      {
+        "id": "tree",
+        "origin": {
+          "x": 39,
+          "y": 38
+        },
+        "size": {
+          "width": 23,
+          "height": 27
+        }
+      },
+      {
+        "id": "tree",
+        "origin": {
+          "x": 63,
+          "y": 41
+        },
+        "size": {
+          "width": 18,
+          "height": 24
+        }
+      },
+      {
+        "id": "tree",
+        "origin": {
+          "x": 81,
+          "y": 31
+        },
+        "size": {
+          "width": 24,
+          "height": 34
+        }
+      },
+      {
+        "id": "house1",
+        "origin": {
+          "x": 0,
+          "y": 100
+        },
+        "size": {
+          "width": 44,
+          "height": 25
+        }
+      },
+      {
+        "id": "door1",
+        "origin": {
+          "x": 88,
+          "y": 114
+        },
+        "size": {
+          "width": 8,
+          "height": 11
+        }
+      }
+    ],
+    "parts": [
+      {
+        "id": "main",
+        "indexX": 0,
+        "Y": 0,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    ]
+  }
+  ,
+  {
+    "id": "items",
+
+    "sprites": [
+      {"id": "basicCloth", "index": 0},
+      {"id": "cloak", "index": 3},
+      {"id": "plate", "index": 6},
+      {"id": "robe", "index": 9},
+      {"id": "shortSword", "index": 12, "offset": {"x": 6, "y": 0}}
+    ],
+
+    "regionSize": {
+      "width": 12,
+      "height": 12
+    },
+
+    "partsPrototype": "human",
+    "parts": [
+      {
+        "id": "main",
+        "indexX": 0,
+        "Y": 0,
+        "height": 12,
+        "offset": {
+          "x": 0,
+          "y": 0
+        },
+        "animations": [
+          {
+            "id": "stab",
+            "startIndexX": 7,
+            "steps": 3,
+            "frameDuration": 0.2
+          },
+          {
+            "id": "slash",
+            "startIndexX": 0,
+            "startIndexY": 1,
+            "steps": 5,
+            "frameDuration": 0.2
+          },
+          {
+            "id": "invoke",
+            "startIndexX": 6,
+            "startIndexY": 1,
+            "steps": 4,
+            "frameDuration": 0.3
+          },
+          {
+            "id": "block",
+            "startIndexX": 0,
+            "startIndexY": 2,
+            "steps": 4,
+            "frameDuration": 0.2
+          },
+          {
+            "id": "die",
+            "startIndexX": 5,
+            "startIndexY": 2,
+            "steps": 5,
+            "frameDuration": 0.2,
+            "terminal": true
+          },
+          {
+            "id": "walk",
+            "startIndexX": 1,
+            "steps": 5,
+            "frameDuration": 0.125,
+            "repeat": true
+          }
+        ]
+      }
+    ]
+  }
+]
