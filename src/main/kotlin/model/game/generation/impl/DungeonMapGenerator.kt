@@ -2,22 +2,21 @@ package model.game.generation.impl
 
 import com.github.czyzby.noise4j.map.Grid
 import com.github.czyzby.noise4j.map.generator.room.dungeon.DungeonGenerator
-import model.game.generation.MapGenerator
-import java.awt.Dimension
+import model.game.generation.GridGenerator
 
 
-class DungeonMapGenerator: MapGenerator {
+class DungeonMapGenerator: GridGenerator {
 
-    override fun generate(size: Dimension): MapGenerator.Result {
-        val grid = Grid(64)
+    override fun generate(size: Int): GridGenerator.Result {
+        val grid = Grid(size)
 
         DungeonGenerator().apply {
-            roomGenerationAttempts = 500
-            maxRoomSize = 30
+            roomGenerationAttempts = 100
+            maxRoomSize = 15
             tolerance = 10 // Max difference between width and height.
-            minRoomSize = 9
+            minRoomSize = 3
         }.generate(grid)
 
-        return MapGenerator.Result(grid)
+        return GridGenerator.Result(grid, size)
     }
 }

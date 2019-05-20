@@ -34,7 +34,6 @@ fun init(gameState: GameState) {
     gameState.player = player(initialChunks)
     entitiesLoaded(listOf(gameState.player))
 
-    loadHouse(initialChunks, gameState)
     for (chunk in initialChunks ) {
         loadEntities(chunk, gameState)
     }

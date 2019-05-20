@@ -11,30 +11,22 @@ import java.io.Serializable
  */
 class Chunk(
         val index: java.awt.Point,
-        val tiles: Array<Array<out Tile>>,
+        val tiles: Tiles,
         val areas: Collection<ChunkArea> = mutableListOf<ChunkArea>()
 ) : Serializable {
 
     fun get(position: Point) = get(
-            (position.x - (index.x * CHUNK_SIZE_IN_TILES.width)).toInt(),
-            (position.y - (index.y * CHUNK_SIZE_IN_TILES.height)).toInt()
+            (position.x - (index.x * CHUNK_SIZE_IN_TILES)).toInt(),
+            (position.y - (index.y * CHUNK_SIZE_IN_TILES)).toInt()
     )
 
     fun get(x: Int, y: Int): Tile? {
-        if (x >= tiles.size || x < 0) return null
-        if (y >= tiles[x].size || y < 0) return null
+        if (!tiles.isValid(x, y)) return null
 
-        return tiles[x][y]
+        return tiles[x, y]
     }
 
-    fun size() = Dimension(tiles.size, tiles[0].size)
+    fun size() = Dimension(tiles.size, tiles.size)
 
-    fun forEachTile(consumer: (Tile, Int, Int) -> (Unit)) {
-        for (x in tiles.indices) {
-            for (y in tiles[x].indices) {
-                val tile = this.get(x, y)
-                consumer.invoke(tile!!, x, y)
-            }
-        }
-    }
+    fun forEachTile(consumer: (Tile, Int, Int) -> (Unit)) = tiles.forEachTile(consumer)
 }

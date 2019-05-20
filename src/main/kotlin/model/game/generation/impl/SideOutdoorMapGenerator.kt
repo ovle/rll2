@@ -1,16 +1,16 @@
 //package model.game.generation.impl
 //
-//import model.game.generation.MapGenerator
+//import model.game.generation.GridGenerator
 //import util.randomLessThan
 //import java.awt.Dimension
 //
 //
-//class SideOutdoorMapGenerator : MapGenerator {
+//class SideOutdoorMapGenerator : GridGenerator {
 //
 //    private val SOLID = 0.5f
 //    private val FLOOR_HEIGHT = 0.0f
 //
-//    override fun generate(size: Dimension): MapGenerator.MapGenerationResult {
+//    override fun generate(size: Dimension): GridGenerator.MapGenerationResult {
 //        val result = Array(size.width, { Array(size.height, {FLOOR_HEIGHT}) })
 //        result.forEach { column ->
 //            for (y in (0..2)) {
@@ -23,6 +23,6 @@
 ////            }
 //        }
 //
-//        return MapGenerator.MapGenerationResult(result)
+//        return GridGenerator.MapGenerationResult(result)
 //    }
 //}

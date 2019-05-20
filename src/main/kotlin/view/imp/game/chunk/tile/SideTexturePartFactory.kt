@@ -29,14 +29,14 @@ class SideTexturePartFactory : TexturePartFactory {
 
         val tile = tiles.tile
         var type = when (layerType) {
-            LayerType.Game -> {
+            LayerType.Main -> {
                 when {
                     solid(tile) -> TileTextureType.Solid
                     water(tile) -> TileTextureType.Water
                     else -> null
                 }
             }
-            LayerType.Background -> TileTextureType.Void
+            LayerType.Floor -> TileTextureType.Void
 
             else -> null
         }

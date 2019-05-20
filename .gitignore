@@ -5,3 +5,4 @@ out/
 .gradle
 #ignore thumbnails created by windows
 Thumbs.db
+build

@@ -33,11 +33,11 @@ class BaseEntitiesFactory: EntitiesFactory {
 
     override fun entities(chunk: Chunk): List<Entity> {
         val result = mutableListOf<Entity>()
-        chunk.forEachTile {
-            tile, x, y ->
-                val tiles = TileWithAdjacents(x, y, chunk)
-                result.addAll(initTileEntities(chunk, tiles, x, y))
-        }
+//        chunk.forEachTile {
+//            tile, x, y ->
+//                val tiles = TileWithAdjacents(x, y, chunk)
+//                result.addAll(initTileEntities(chunk, tiles, x, y))
+//        }
         return result
     }
 
@@ -84,8 +84,8 @@ class BaseEntitiesFactory: EntitiesFactory {
         val chunkPosition = chunk.index
         val chunkSize = CHUNK_SIZE_IN_TILES
 
-        val entityX = chunkPosition.x * chunkSize.width.toDouble() + x
-        val entityY = chunkPosition.y * chunkSize.height.toDouble() + y
+        val entityX = chunkPosition.x * chunkSize.toDouble() + x
+        val entityY = chunkPosition.y * chunkSize.toDouble() + y
 
         return Point(entityX, entityY)
     }

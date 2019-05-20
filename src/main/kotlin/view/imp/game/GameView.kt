@@ -41,12 +41,12 @@ class GameView(val game: GameState) : ScreenView(), SpriteRendererDelegate, Chun
     //--------------------------------------------------
 
     override val layersByType = mutableMapOf (
-            LayerType.Background to layer(),
-            LayerType.Game to layer(),
-            LayerType.Special to layer()
+            LayerType.Floor to layer(),
+            LayerType.Main to layer(),
+            LayerType.Top to layer()
     ).toSortedMap(LayerType.comparator())
 
-    private fun layer(): TiledMapTileLayer = DynamicTiledMapLayer(0, 0, 12, 12)
+    private fun layer(): TiledMapTileLayer = DynamicTiledMapLayer(0, 0, 24, 24)
 
     //--------------------------------------------------
 

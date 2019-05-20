@@ -2,16 +2,14 @@ package util
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import model.game.CHUNK_SIZE_IN_TILES
-import model.game.template.EntityTemplate
 import utils.geom.Point
-import view.config.SpritesheetConfig
 import java.awt.Dimension
 import java.io.File
 import java.util.*
 
 
 fun point(x: Int, y: Int) = arrayOf(java.awt.Point(x, y))
-fun randomPoint(xRange: IntRange, y: Int) = arrayOf(java.awt.Point(xRange.random(), y))
+fun randomPoint(xRange: IntRange, yRange: IntRange) = arrayOf(java.awt.Point(xRange.random(), yRange.random()))
 fun animation(xRange: IntRange, y: Int) = xRange.map { java.awt.Point(it, y) }.toTypedArray()
 
 operator fun java.awt.Point.times(amount: Int) = java.awt.Point(x * amount, y * amount)
@@ -28,13 +26,13 @@ fun Point.toIndex(): java.awt.Point {
     val chunkSize = CHUNK_SIZE_IN_TILES
     val x = this.x
     val y = this.y
-    var indexX = (x / chunkSize.width).toInt()
-    var indexY = (y / chunkSize.height).toInt()
+    var indexX = (x / chunkSize).toInt()
+    var indexY = (y / chunkSize).toInt()
 
-    if (x < 0 && ((x % chunkSize.width) != 0.0)) {
+    if (x < 0 && ((x % chunkSize) != 0.0)) {
         indexX -= 1
     }
-    if (y < 0 && ((y % chunkSize.height) != 0.0)) {
+    if (y < 0 && ((y % chunkSize) != 0.0)) {
         indexY -= 1
     }
 

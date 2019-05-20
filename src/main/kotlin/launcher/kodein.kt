@@ -6,7 +6,7 @@ import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.singleton
 import model.game.GameState
 import model.game.chunk.*
-import model.game.generation.MapGenerator
+import model.game.generation.GridGenerator
 import model.game.generation.impl.DungeonMapGenerator
 import model.game.template.EntityTemplate
 import model.game.template.ItemTemplate
@@ -35,7 +35,7 @@ val kodein = Kodein {
     bind<SpriteFactory>() with singleton { BaseSpriteFactory() }
     bind<TileFactory>() with singleton { BaseTileFactory() }
 
-    bind<MapGenerator>() with singleton { DungeonMapGenerator() }
+    bind<GridGenerator>() with singleton { DungeonMapGenerator() }
 
     bind<TextureRegistry>() with singleton { BaseTextureRegistry() }
     bind<TexturePartFactory>() with singleton { TopDownTexturePartFactory() }

@@ -1,7 +1,7 @@
 //package model.game.generation.impl
 //
 //import lombok.extern.log4j.Log4j
-//import model.game.generation.MapGenerator
+//import model.game.generation.GridGenerator
 //import model.game.generation.util.MapNormalizer
 //import java.awt.Dimension
 //import java.awt.Point
@@ -26,7 +26,7 @@
 //
 //        val normalize: Boolean = false,
 //        val isToroidal: Boolean = false
-//) : MapGenerator {
+//) : GridGenerator {
 //
 //    companion object {
 //        val MIN_AREA_SIZE: Int = 3
@@ -55,7 +55,7 @@
 ////	Entry point
 ////---------------------------------------------------------------------------------------------
 //
-//    override fun generate(size: Dimension, neighbors: MapGenerator.MapNeighbors?, gridValues: MapGenerator.GridValues?): MapGenerator.MapGenerationResult {
+//    override fun generate(size: Dimension, neighbors: GridGenerator.MapNeighbors?, gridValues: GridGenerator.GridValues?): GridGenerator.MapGenerationResult {
 //        areaLength = size.width
 //        this.gridValues = gridValues?.values
 //        val result = Array(size.width, { Array(size.height, {TILE_NOT_INITIALIZED_ID})})
@@ -72,10 +72,10 @@
 //            normalizer.process(result);
 //        }
 //
-//        return MapGenerator.MapGenerationResult(result)
+//        return GridGenerator.MapGenerationResult(result)
 //    }
 //
-//    private fun fillInitialValues(neighbors: MapGenerator.MapNeighbors, size: Dimension) {
+//    private fun fillInitialValues(neighbors: GridGenerator.MapNeighbors, size: Dimension) {
 //        val left = neighbors.left
 //        val right = neighbors.right
 //        val top = neighbors.top

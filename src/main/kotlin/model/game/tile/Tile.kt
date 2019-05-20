@@ -9,10 +9,11 @@ class Tile (val x: Int, val y: Int, val type: Type): Serializable {
 
     enum class Type {
         Void,
+        Floor,
         Water,
         Solid
     }
 
     val passable: Boolean
-        get() = type == Type.Void
+        get() = type != Type.Solid
 }

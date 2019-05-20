@@ -13,9 +13,9 @@ import view.imp.game.texture.TextureRegistry
 
 
 enum class LayerType(val index: Int) {
-    Background(0),
-    Game(1),
-    Special(2);
+    Floor(0),
+    Main(1),
+    Top(2);
 
     companion object {
         fun comparator() = java.util.Comparator {
@@ -32,9 +32,9 @@ class ChunkView(val chunk: Chunk) {
     private val textureRegistry = kodein.instance<TextureRegistry>()
 
     val cellsByLayerType = mutableMapOf (
-            LayerType.Background to cells2d(),
-            LayerType.Game to cells2d(),
-            LayerType.Special to cells2d()
+            LayerType.Floor to cells2d(),
+            LayerType.Main to cells2d(),
+            LayerType.Top to cells2d()
     ).toSortedMap(LayerType.comparator())
 
 
